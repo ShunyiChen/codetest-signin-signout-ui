@@ -1,9 +1,10 @@
-import React from 'react';
+// import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import SignUp from './signup/SignUp';
 import SignIn from './signin/SignIn';
+
 
 function App() {
   return (
@@ -23,12 +24,13 @@ function App() {
         </a>
       </header> */}
 
-      <Router>
+       <Router>
            <Link to="/signUp">注 册</Link> | 
           <Link to="/signIn">登 录</Link>
           <Route path="/signUp" component={SignUp}></Route>
           <Route path="/signIn" component={SignIn}></Route>
       </Router>
+      
 
     </div>
   );

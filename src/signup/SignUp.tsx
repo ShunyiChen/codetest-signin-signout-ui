@@ -11,7 +11,7 @@ import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-
+ 
 function Copyright(props: any) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -109,9 +109,14 @@ export default function SignUp() {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              {/* <Link href="#" variant="body2">
+                Already have an account? Sign in
+              </Link> */}
+         
+              <Link href="/signIn">
                 Already have an account? Sign in
               </Link>
+              
             </Grid>
           </Grid>
         </Box>

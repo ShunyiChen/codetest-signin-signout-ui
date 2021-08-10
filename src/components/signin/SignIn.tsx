@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -11,6 +11,7 @@ import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import PropTypes from 'prop-types';
 
 function Copyright(props: any) {
   return (
@@ -25,16 +26,40 @@ function Copyright(props: any) {
   );
 }
 
-export default function SignIn() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
+async function loginUser(credentials) {
+  return fetch('http://localhost:8080/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(credentials)
+  })
+    .then(data => data.json())
+ }
+ 
+
+export default function SignIn({ setToken }) {
+ 
+
+  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   // eslint-disable-next-line no-console
+  //   console.log({
+  //     email: data.get('email'),
+  //     password: data.get('password'),
+  //   });
+  // };
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const token = await loginUser({
       email: data.get('email'),
       password: data.get('password'),
     });
-  };
+    console.log(token);
+    setToken(token);
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -98,4 +123,8 @@ export default function SignIn() {
       <Copyright sx={{ mt: 8, mb: 4 }} />
     </Container>
   );
+}
+
+SignIn.propTypes = {
+  setToken: PropTypes.func.isRequired
 }

@@ -1,18 +1,21 @@
 // import React from 'react';
 // import logo from './logo.svg';
-import './App.css';
 // import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link,Switch} from 'react-router-dom';
-// import SignUp from '../signup/SignUp';
+import './App.css';
+import { BrowserRouter as Router, Route, Switch, useLocation} from 'react-router-dom';
 import SignIn from '../signin/SignIn';
 import Dashboard from '../dashboard/Dashboard';
 import Preferences from '../preferences/Preferences';
 import useToken from './useToken';
+import SignUp from '../signup/SignUp';
 
 function App() {
 
   const { token, setToken } = useToken();
 
+  if(window.location.pathname === "/signUp") {
+     return <SignUp/>
+  }
   if(!token) {
     return <SignIn setToken={setToken} />
   }
@@ -27,6 +30,9 @@ function App() {
             </Route>
             <Route path="/preferences">
               <Preferences />
+            </Route>
+            <Route path="/signUp">
+              <SignUp />
             </Route>
           </Switch>
         </Router>

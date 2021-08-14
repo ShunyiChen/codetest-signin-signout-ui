@@ -6,9 +6,6 @@ export default function Bulbs() {
     const [on, setOn] = useState(false);
     const [count, setCount] = useState(1);
     
-    // const lightOn = () => setOn(true);
-    // const lightOff = () => setOn(false);
-
     const lightSwitch = () => setOn(on => !on);
     const addBulbs = () => setCount(count => count + 1);
 

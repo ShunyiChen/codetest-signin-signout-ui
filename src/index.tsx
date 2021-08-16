@@ -11,8 +11,10 @@ import reportWebVitals from './reportWebVitals';
 // import HookCounterFour from './components/examples/HookCounterFour';
 // import ClassCounterOne from './components/examples/ClassCounterOne';
 // import HookMouse from './components/examples/HookMouse';
-import MouseContainer from './components/examples/MouseContainer';
-
+// import MouseContainer from './components/examples/MouseContainer';
+// import CounterOne from './components/examples/CounterOne';
+// import CounterTwo from './components/examples/CounterTwo';
+import CounterThree from './components/examples/CounterThree';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,7 +23,7 @@ ReactDOM.render(
     {/* <Example /> */}
     {/* <HookCounterTwo /> */}
     {/* <HookMouse/> */}
-    <MouseContainer/>
+    <CounterThree/>
   </React.StrictMode>,
   document.getElementById('root')
 );

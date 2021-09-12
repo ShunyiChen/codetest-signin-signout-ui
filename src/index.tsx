@@ -14,7 +14,8 @@ import reportWebVitals from './reportWebVitals';
 // import MouseContainer from './components/examples/MouseContainer';
 // import CounterOne from './components/examples/CounterOne';
 // import CounterTwo from './components/examples/CounterTwo';
-import CounterThree from './components/examples/CounterThree';
+// import CounterThree from './components/examples/CounterThree';
+import FocusInput from './components/ref/FocusInput';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,7 +24,8 @@ ReactDOM.render(
     {/* <Example /> */}
     {/* <HookCounterTwo /> */}
     {/* <HookMouse/> */}
-    <CounterThree/>
+    {/* <CounterThree/> */}
+    <FocusInput/>
   </React.StrictMode>,
   document.getElementById('root')
 );

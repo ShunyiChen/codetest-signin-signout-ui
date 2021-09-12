@@ -6,7 +6,6 @@ const initValue = {
     secondValue : 2
 };
 
-
 const Dashboard: FC<{}> = () => {
 
     const reducer = (state, action) => {

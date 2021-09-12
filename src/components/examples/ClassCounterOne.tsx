@@ -7,8 +7,7 @@ function ClassCounterOne() {
 
     const [count, setCount] = useState(0)
 
-//// 有条件限制的useEffact
-
+/// 有条件限制的useEffact
     useEffect(() => {
         console.log('useEffact - updating document title')
         document.title = `You clicked ${count} times`
